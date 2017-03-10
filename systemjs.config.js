@@ -23,12 +23,12 @@ System.config({
     }
   },
   transpiler: 'ts',
-  paths: {'node_modules': './node_modules', '*': 'node_modules/*'},
+  paths: {'mods': './mods', '*': 'mods/*'},
   map: {
     app: 'app',
-    'two.js': 'node_modules/two.js/build/two.js',
-    'rxjs': 'node_modules/rxjs/bundles/Rx.js',
-    'ts': 'node_modules/plugin-typescript/lib/plugin.js',
-    'typescript': 'node_modules/typescript/lib/typescript.js',
+    'two.js': 'mods/two.js/build/two.js',
+    'rxjs': 'mods/rxjs/bundles/Rx.js',
+    'ts': 'mods/plugin-typescript/lib/plugin.js',
+    'typescript': 'mods/typescript/lib/typescript.js',
   }
 });
