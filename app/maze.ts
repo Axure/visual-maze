@@ -1,3 +1,27 @@
+
+import 'two.js';
+import { Observable } from 'rxjs';
+
+export interface TwoOptions {
+  type: any;
+  fullscreen?: any;
+  autostart: boolean;
+  width?: number;
+  height?: number;
+}
+
+declare class Two {
+  public constructor(options: TwoOptions);
+
+  static Types: {[key: string]: string};
+
+  public appendTo(htmlElement: HTMLElement);
+}
+
+declare var url: {
+  type: string;
+};
+
 var type = /(canvas|webgl)/.test(url.type) ? url.type : 'svg';
 var two = new Two({
             type: Two.Types[type],
@@ -6,6 +30,12 @@ var two = new Two({
             width: 800,
             height: 800
           }).appendTo(document.body);
+
+export class Maze {
+  constructor() {
+    console.log('I am a maze!');
+  }
+}
 
 /**
  * A helper function that produces an array from the start to the end.
@@ -20,15 +50,26 @@ const DOM = {
 
 };
 
+interface Point {
+  x: number; y: number;
+}
+
 class Model {
+
+  man: Point;
+  size: number;
+  maze: any;
+
   constructor(size) {
-    this.man = {x: 0, y: 0}, this.size = 10,
+    this.man = {x: 0, y: 0};
+    this.size = 10;
     this.maze =
         (() => range(0, size).map(() => {return range(0, this.size).map(() => {
                                     return Math.random() > 0.5 ? 1 : 0;
                                   })}))()
   }
 }
+
 
 class Binding {
   
@@ -44,7 +85,7 @@ const view = {
 
 const observables = {
   inputChange:
-      Rx.Observable.fromEvent(document.getElementById('input-size'), 'keyup')
+      Observable.fromEvent(document.getElementById('input-size'), 'keyup')
 };
 
 observables.inputChange.subscribe(
@@ -55,7 +96,7 @@ const man = {
   y: 0
 };
 
-let size = 10;
+const size = 10;
 
 const itemSize = 30;
 

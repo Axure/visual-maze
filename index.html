@@ -7,14 +7,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <!--<link rel="image_src" href="../images/logo.gif" />
     <link rel="shortcut icon" type="image/gif" href="../images/favicon.gif">-->
+
+  <script>
+    document.write('<base href="' + document.location + '" />');
+  </script>
   <script src="./url.js"></script>
-  <script src="./rx.all.js"></script>
-  <script src="./two.js"></script>
   <style>
-    html, body, canvas {
-      height: 100vh; width: 100vw;
+    html,
+    body,
+    canvas {
+      height: 100vh;
+      width: 100vw;
     }
   </style>
+  <!-- Polyfills -->
+  <script src="./node_modules/core-js/client/shim.min.js"></script>
+
+  <script src="./node_modules/zone.js/dist/zone.js"></script>
+  <script src="./node_modules/systemjs/dist/system.src.js"></script>
+  <script src="./systemjs.config.js"></script>
 </head>
 
 <body style="background: rgba(0, 191, 168, 0.25);">
@@ -25,7 +36,10 @@
     <input type="text" placeholder="size" id="input-size" />
   </div>
   <div class="scripts">
-    <script src="./maze.js">
+    <script>
+      System.import('app').then(function () {
+        System.import('./main.js')
+      });
     </script>
   </div>
 </body>
