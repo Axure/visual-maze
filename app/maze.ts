@@ -31,7 +31,6 @@ var two = new Two({
             height: 800
           }).appendTo(document.body);
 
-
 export class Maze {
   constructor() {
     console.log('I am a maze!');
@@ -71,7 +70,10 @@ class Model {
   }
 }
 
-class Binding {}
+
+class Binding {
+  
+}
 
 const model = new Model(10);
 console.log(model);
