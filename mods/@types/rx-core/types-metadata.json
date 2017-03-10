@@ -1,0 +1,40 @@
+{
+    "name": "rx-core",
+    "libraryName": "rx-core",
+    "sourceRepoURL": "https://www.github.com/DefinitelyTyped/DefinitelyTyped",
+    "data": {
+        "contributors": [
+            {
+                "name": "gsino",
+                "url": "http://www.codeplex.com/site/users/view/gsino"
+            },
+            {
+                "name": "Igor Oleinikov",
+                "url": "https://github.com/Igorbek"
+            },
+            {
+                "name": "Mizunashi Mana",
+                "url": "https://github.com/mizunashi-mana"
+            }
+        ],
+        "dependencies": {},
+        "pathMappings": {},
+        "libraryMajorVersion": 4,
+        "libraryMinorVersion": 0,
+        "typeScriptVersion": "2.0",
+        "libraryName": "rx-core",
+        "typingsPackageName": "rx-core",
+        "projectName": "https://github.com/Reactive-Extensions/RxJS",
+        "sourceRepoURL": "https://www.github.com/DefinitelyTyped/DefinitelyTyped",
+        "globals": [],
+        "declaredModules": [
+            "rx-core"
+        ],
+        "files": [
+            "index.d.ts"
+        ],
+        "hasPackageJson": false,
+        "contentHash": "049e0f2e3e7467bbc6347b791bddc012de5e3037a9f61c52ce81396028df46b5"
+    },
+    "isLatest": true
+}

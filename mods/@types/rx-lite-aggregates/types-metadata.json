@@ -1,0 +1,38 @@
+{
+    "name": "rx-lite-aggregates",
+    "libraryName": "rx-lite-aggregates",
+    "sourceRepoURL": "https://www.github.com/DefinitelyTyped/DefinitelyTyped",
+    "data": {
+        "contributors": [
+            {
+                "name": "Carl de Billy",
+                "url": "http://carl.debilly.net/"
+            },
+            {
+                "name": "Igor Oleinikov",
+                "url": "https://github.com/Igorbek"
+            }
+        ],
+        "dependencies": {
+            "rx-lite": "*"
+        },
+        "pathMappings": {},
+        "libraryMajorVersion": 4,
+        "libraryMinorVersion": 0,
+        "typeScriptVersion": "2.0",
+        "libraryName": "rx-lite-aggregates",
+        "typingsPackageName": "rx-lite-aggregates",
+        "projectName": "https://github.com/Reactive-Extensions/RxJS",
+        "sourceRepoURL": "https://www.github.com/DefinitelyTyped/DefinitelyTyped",
+        "globals": [],
+        "declaredModules": [
+            "rx-lite-aggregates"
+        ],
+        "files": [
+            "index.d.ts"
+        ],
+        "hasPackageJson": false,
+        "contentHash": "0785e54448f1bf955668ed447aff4c097d3a035b7ed55da1024b5f3a7f39d07f"
+    },
+    "isLatest": true
+}
