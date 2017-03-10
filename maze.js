@@ -1,21 +1,70 @@
 var type = /(canvas|webgl)/.test(url.type) ? url.type : 'svg';
-var two = new Two({type: Two.Types[type], fullscreen: false, autostart: true})
-              .appendTo(document.body);
+var two = new Two({
+            type: Two.Types[type],
+            fullscreen: false,
+            autostart: true,
+            width: 800,
+            height: 800
+          }).appendTo(document.body);
+
+/**
+ * A helper function that produces an array from the start to the end.
+ * Taken from [this answer](http://stackoverflow.com/posts/36963945/revisions).
+ * @param {*} start
+ * @param {*} end
+ */
+const range = (start, end) =>
+    Array.from({length: (end - start)}, (v, k) => k + start);
+
+const DOM = {
+
+};
+
+class Model {
+  constructor(size) {
+    this.man = {x: 0, y: 0}, this.size = 10,
+    this.maze =
+        (() => range(0, size).map(() => {return range(0, this.size).map(() => {
+                                    return Math.random() > 0.5 ? 1 : 0;
+                                  })}))()
+  }
+}
+
+class Binding {
+  
+}
+
+const model = new Model(10);
+console.log(model);
+
+const view = {
+  modelItems: {},
+  manItem: {}
+};
+
+const observables = {
+  inputChange:
+      Rx.Observable.fromEvent(document.getElementById('input-size'), 'keyup')
+};
+
+observables.inputChange.subscribe(
+    (e) => console.log(document.getElementById('input-size').value));
 
 const man = {
   x: 0,
   y: 0
 };
 
-const maze = [
-  [1, 1, 0, 0, 1, 1, 0],
-  [1, 1, 0, 0, 1, 1, 0],
-  [1, 1, 0, 0, 1, 1, 0],
-  [1, 1, 0, 0, 1, 1, 0],
-  [1, 1, 0, 0, 1, 1, 0],
-  [1, 1, 0, 0, 1, 1, 0],
-  [1, 1, 0, 0, 1, 1, 0],
-];
+let size = 10;
+
+const itemSize = 30;
+
+
+const maze = range(0, size).map(() => {return range(0, size).map(() => {
+                                  return Math.random() > 0.5 ? 1 : 0;
+                                })});
+
+console.log(maze);
 
 let walked = null;
 
@@ -38,14 +87,18 @@ init();
 function create() {
   for (const [i, row] of maze.entries()) {
     for (const [j, item] of row.entries()) {
-      const rect = two.makeRectangle(50 * j + 100, 50 * i + 100, 45, 45);
+      const rect = two.makeRectangle(
+          itemSize * j + 100, itemSize * i + 100, itemSize * 0.9,
+          itemSize * 0.9);
       rect.fill = maze[i][j] === 1 ? 'rgba(0, 200, 255, 0.75)' :
                                      'rgba(200, 0, 255, 0.25)';
       rect.stroke = '#1C75BC';
       mazeItems[i][j] = rect;
     }
   }
-  manItem = two.makeRectangle(50 * man.x + 100, 50 * man.y + 100, 40, 40);
+  manItem = two.makeRectangle(
+      itemSize * man.x + 100, itemSize * man.y + 100, itemSize * 0.8,
+      itemSize * 0.8);
 }
 
 /**
@@ -98,7 +151,7 @@ goOneButton.onclick = () => {
 };
 
 function refreshMan() {
-  manItem.translation.set(100 + man.y * 50, 100 + man.x * 50);
+  manItem.translation.set(100 + man.y * itemSize, 100 + man.x * itemSize);
   console.log(manItem.translation);
   two.update();
 }
@@ -119,7 +172,7 @@ function isValid(x, y) {
 
 function search() {
   walked = maze.map((row) => { return row.map(() => false); })
-  stack = [];
+  stack = [{x: 0, y: 0}];
   searchWith(stack, man);
 }
 
@@ -128,19 +181,23 @@ function searchWith(stack, man) {
     walked[man.x][man.y] = true;
     mazeItems[man.x][man.y].fill = 'rgba(0, 0, 255, 1)';
     console.log(stack, man);
+
     const {x, y} = man;
+    const originalLength = stack.length;
+
     if (isValid(x + 1, y)) stack.push({x: x + 1, y: y});
     if (isValid(x, y + 1)) stack.push({x: x, y: y + 1});
     if (isValid(x - 1, y)) stack.push({x: x - 1, y: y});
     if (isValid(x, y - 1)) stack.push({x: x, y: y - 1});
 
     if (stack.length === 0) return;
-
     const top = stack[stack.length - 1];
     man.x = top.x;
     man.y = top.y;
-    stack.pop();
+    // stack.pop();
     refreshMan();
+    if (stack.length === originalLength) stack.pop();
+
     searchWith(stack, man);
   }, 1000);
 }
