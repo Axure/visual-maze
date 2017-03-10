@@ -1,4 +1,5 @@
 node_modules/
 
-dist/
+# Avoid naming conflicts with the node modules.
+mazedist/
 npm-debug.log
