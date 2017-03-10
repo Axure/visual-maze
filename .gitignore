@@ -3,3 +3,4 @@ npm-debug.log
 
 # Prevent self from being merged.
 .gitignore
+!node_modules/
