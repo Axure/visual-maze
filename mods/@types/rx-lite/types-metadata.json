@@ -1,0 +1,32 @@
+{
+    "name": "rx-lite",
+    "libraryName": "rx-lite",
+    "sourceRepoURL": "https://www.github.com/DefinitelyTyped/DefinitelyTyped",
+    "data": {
+        "authors": "gsino <http://www.codeplex.com/site/users/view/gsino>, Igor Oleinikov <https://github.com/Igorbek>",
+        "dependencies": {
+            "rx-core": "*",
+            "rx-core-binding": "*"
+        },
+        "pathMappings": {},
+        "libraryMajorVersion": 4,
+        "libraryMinorVersion": 0,
+        "typeScriptVersion": "2.0",
+        "libraryName": "rx-lite",
+        "typingsPackageName": "rx-lite",
+        "projectName": "https://github.com/Reactive-Extensions/RxJS",
+        "sourceRepoURL": "https://www.github.com/DefinitelyTyped/DefinitelyTyped",
+        "globals": [
+            "Rx"
+        ],
+        "declaredModules": [
+            "rx-lite"
+        ],
+        "files": [
+            "index.d.ts"
+        ],
+        "hasPackageJson": false,
+        "contentHash": "986ff8b1db463de6723d48880ca87a840be62048afa3442bc626712ed4b232bf"
+    },
+    "isLatest": true
+}

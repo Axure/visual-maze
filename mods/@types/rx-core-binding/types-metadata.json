@@ -1,0 +1,40 @@
+{
+    "name": "rx-core-binding",
+    "libraryName": "rx-core-binding",
+    "sourceRepoURL": "https://www.github.com/DefinitelyTyped/DefinitelyTyped",
+    "data": {
+        "contributors": [
+            {
+                "name": "Carl de Billy",
+                "url": "http://carl.debilly.net/"
+            },
+            {
+                "name": "Igor Oleinikov",
+                "url": "https://github.com/Igorbek"
+            }
+        ],
+        "dependencies": {
+            "rx-core": "*"
+        },
+        "pathMappings": {},
+        "libraryMajorVersion": 4,
+        "libraryMinorVersion": 0,
+        "typeScriptVersion": "2.0",
+        "libraryName": "rx-core-binding",
+        "typingsPackageName": "rx-core-binding",
+        "projectName": "https://github.com/Reactive-Extensions/RxJS",
+        "sourceRepoURL": "https://www.github.com/DefinitelyTyped/DefinitelyTyped",
+        "globals": [
+            "Rx"
+        ],
+        "declaredModules": [
+            "rx-core-binding"
+        ],
+        "files": [
+            "index.d.ts"
+        ],
+        "hasPackageJson": false,
+        "contentHash": "cad54ce7758f84acf94364c81af7c94910380a797381e263ba14d06d1680b40f"
+    },
+    "isLatest": true
+}

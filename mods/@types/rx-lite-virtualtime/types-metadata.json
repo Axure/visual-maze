@@ -1,0 +1,40 @@
+{
+    "name": "rx-lite-virtualtime",
+    "libraryName": "rx-lite-virtualtime",
+    "sourceRepoURL": "https://www.github.com/DefinitelyTyped/DefinitelyTyped",
+    "data": {
+        "contributors": [
+            {
+                "name": "gsino",
+                "url": "http://www.codeplex.com/site/users/view/gsino"
+            },
+            {
+                "name": "Igor Oleinikov",
+                "url": "https://github.com/Igorbek"
+            }
+        ],
+        "dependencies": {
+            "rx-lite": "*"
+        },
+        "pathMappings": {},
+        "libraryMajorVersion": 4,
+        "libraryMinorVersion": 0,
+        "typeScriptVersion": "2.0",
+        "libraryName": "rx-lite-virtualtime",
+        "typingsPackageName": "rx-lite-virtualtime",
+        "projectName": "https://github.com/Reactive-Extensions/RxJS",
+        "sourceRepoURL": "https://www.github.com/DefinitelyTyped/DefinitelyTyped",
+        "globals": [
+            "Rx"
+        ],
+        "declaredModules": [
+            "rx-lite-virtualtime"
+        ],
+        "files": [
+            "index.d.ts"
+        ],
+        "hasPackageJson": false,
+        "contentHash": "9e0f314ab4b245b6b5912127df2f679e81dc4a8a9602cfaa4e884bee6e6d0c98"
+    },
+    "isLatest": true
+}
