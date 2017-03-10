@@ -20,9 +20,19 @@ const DOM = {
 
 };
 
+// interface Point {
+//   x: number; y: number;
+// }
+
 class Model {
+
+  // man: Point;
+  // size: number;
+  // maze: any;
+
   constructor(size) {
-    this.man = {x: 0, y: 0}, this.size = 10,
+    this.man = {x: 0, y: 0};
+    this.size = 10;
     this.maze =
         (() => range(0, size).map(() => {return range(0, this.size).map(() => {
                                     return Math.random() > 0.5 ? 1 : 0;
@@ -30,9 +40,7 @@ class Model {
   }
 }
 
-class Binding {
-  
-}
+class Binding {}
 
 const model = new Model(10);
 console.log(model);
@@ -55,7 +63,7 @@ const man = {
   y: 0
 };
 
-let size = 10;
+const size = 10;
 
 const itemSize = 30;
 
