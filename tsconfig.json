@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "target": "es2015",
+        "module": "system",
+        "allowJs": true,
+        "moduleResolution": "node",
+        "inlineSourceMap": true,
+        "emitDecoratorMetadata": true,
+        "allowSyntheticDefaultImports": true,
+        "experimentalDecorators": true,
+        "lib": ["es2015", "dom"],
+        "noImplicitAny": false,
+        "strictNullChecks": false,
+        "types": [
+            "rx"
+        ],
+        "outDir": "dist"
+    }
+}
